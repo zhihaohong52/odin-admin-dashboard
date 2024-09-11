@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --background-color-light: white;
+    --background-color-dark: black;
+    --secondary-color-light: lightgrey;
+    --secondary-color-dark: rgb(76, 76, 76);
+    --primary-color:rgb(0, 174, 255);
+    --highlight-color: orange;
+    --color-light: white;
+    --color-dark: black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+}
+
+.container {
+    background-color: var(--background-color-light);
+    color: var(--color-dark);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.navbar {
+    grid-column: 1;
+    background-color: var(--primary-color);
+    color: var(--color-light);
+    padding: 1rem;
+}
+
+.material-symbols-outlined {
+    font-size: 2.5rem;
+}
+
+.nav-link:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.logo-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.main {
+    grid-column: 2;
+    background-color: var(--background-color-light);
+    display: grid;
+    grid-template-rows: 10rem 1fr;
+}
+
+.main-header {
+    grid-row: 1;
+    padding: 1rem;
+    background-color: var(--background-color-light);
+    display: grid;
+    grid-template-rows: 1fr 3r;
+}
+
+.header-top {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.search-bar {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+}
+
+.header-main {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-main {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1rem;
+}
+
+#main-icon {
+    width: 72px;
+    height: 72px;
+}
+
+.profile-main-container {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.greeting {
+    grid-row: 1;
+}
+
+.profile-name {
+    grid-row: 2;
+}
+
+.action-buttons {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    background-color: var(--secondary-color-light);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.projects {
+    grid-column: 1;
+    width: 100%;
+    max-width: 100%;
+}
+
+.projects-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.project-card {
+    background-color: var(--background-color-light);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+.sidebar {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: max-content;
+    gap: 1rem;
+}
+
+.announcements {
+    grid-row: 1;
+}
+
+.cards {
+    background-color: var(--background-color-light);
+    border-radius: 0.5rem;
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: 0.5rem;
+    padding: 2rem;
+}
+
+.announcement-card {
+    position: relative;
+    padding: 1rem;
+}
+
+.announcement-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 1px;
+    background-color: var(--secondary-color-light);
+}
+
+.trending {
+    grid-row: 2;
+}
+
+.profile-card {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.profile-container {
+    align-content: center;
+}
