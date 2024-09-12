@@ -24,8 +24,65 @@
   font: inherit;
 }
 
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-light: rgb(30, 30, 30); /* A darker background */
+    --secondary-color-light: rgb(50, 50, 50); /* Adjust secondary color */
+    --primary-color: rgb(0, 0, 154); /* Adjust primary color */
+    --highlight-color: orange; /* Highlight stays same */
+    --color-light: white; /* Light text for contrast */
+    --color-dark: rgb(210, 210, 210); /* Light gray for less contrast */
+    --shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.7); /* Darker shadow */
+  }
+
+  p {
+    color: var(--color-dark); /* Light text color */
+  }
+
+  body {
+    background-color: var(--background-color-light); /* Dark background */
+    color: var(--color-dark); /* Light text color */
+  }
+
+  .mdi {
+    color: var(--color-light); /* Light icons */
+  }
+
+  .navbar {
+    background-color: var(--primary-color);
+    color: var(--color-light); /* Adjusted to light text in dark mode */
+  }
+
+  .main-header {
+    background-color: var(--background-color-light); /* Dark background for header */
+    box-shadow: var(--shadow); /* Darker shadow for header */
+  }
+
+  .search-input {
+    background-color: var(--secondary-color-light); /* Darker input background */
+    color: var(--color-dark); /* Light text inside */
+  }
+
+  .search-input:focus {
+    border: 3px solid var(--primary-color); /* Lighter focus border */
+    background-color: black; /* Darker focus input */
+  }
+
+  .project-card {
+    background-color: var(--secondary-color-light); /* Darker background for cards */
+    color: var(--color-dark); /* Light text for contrast */
+  }
+
+  .cards {
+    background-color: var(--secondary-color-light); /* Announcements/Trending */
+  }
+}
+
 body {
     overflow-x: hidden;
+    background-color: var(--background-color-light);
+    color: var(--color-dark);
 }
 
 a {
@@ -318,6 +375,7 @@ button {
 .project-text {
     color: gray;
     flex-grow: 1;
+    padding-top: 0.5rem;
 }
 
 .project-buttons {
@@ -386,6 +444,7 @@ button {
 .announcement-text {
     color: gray;
     font-size: 0.8rem;
+    padding: 0.2rem;
 }
 
 .trending {
