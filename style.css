@@ -3,12 +3,13 @@
 :root {
     --background-color-light: white;
     --background-color-dark: black;
-    --secondary-color-light: lightgrey;
+    --secondary-color-light: #E2E8F0;
     --secondary-color-dark: rgb(76, 76, 76);
     --primary-color:rgb(0, 174, 255);
     --highlight-color: orange;
     --color-light: white;
     --color-dark: black;
+    --shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 *,
@@ -21,6 +22,10 @@
   margin: 0;
   padding: 0;
   font: inherit;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 a {
@@ -38,6 +43,12 @@ h1 {
     padding: 0.5rem;
 }
 
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
 .container {
     background-color: var(--background-color-light);
     color: var(--color-dark);
@@ -45,27 +56,55 @@ h1 {
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: max-content 1fr;
+    gap: 0;
+}
+
+.mdi {
+    font-size: 1.5rem;
 }
 
 .navbar {
     grid-column: 1;
     background-color: var(--primary-color);
     color: var(--color-light);
-    padding: 1rem;
+    padding: 2.5rem 0.5rem;
+    min-width: 18vw;
 }
 
-.material-symbols-outlined {
-    font-size: 2.5rem;
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0.5rem;
 }
 
 .nav-link:hover{
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.logo-icon {
-    width: 24px;
-    height: 24px;
+#logo {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.mdi-view-dashboard{
+    font-size: 2.5rem;
+}
+
+.nav-links {
+    padding-top: 2.5rem;
+}
+
+.nav-item {
+    padding: 0.5rem;
 }
 
 .main {
@@ -73,32 +112,71 @@ h1 {
     background-color: var(--background-color-light);
     display: grid;
     grid-template-rows: 10rem 1fr;
+    overflow: visible;
 }
 
 .main-header {
     grid-row: 1;
-    padding: 1rem;
+    padding: 0 1.5rem 1.5rem;
     background-color: var(--background-color-light);
     display: grid;
     grid-template-rows: 1fr 3r;
+    box-shadow: var(--shadow);
+    z-index: 1; /* Ensure it stays above other content */
+    position: relative; /* Make sure the shadow is relative to this element */
 }
 
 .header-top {
     grid-row: 1;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr 0.5fr 1.5fr;
 }
 
 .search-bar {
     grid-column: 1;
     display: flex;
     align-items: center;
+    justify-items:first baseline;
+    gap: 0.5rem;
+
+}
+
+.mdi-magnify,
+.mdi-bell-ring-outline {
+    font-size: 1.5rem;
+}
+
+.search-input {
+    border: none;
+    border-radius: 2.5rem;
+    background-color: var(--secondary-color-light);
+    color: var(--color-dark);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.search-input:focus {
+    border: var(--primary-color);
+    background-color: var(--color-light);
 }
 
 .profile {
-    grid-column: 2;
+    grid-column: 3;
     display: flex;
     align-items: center;
+    padding: 0.5rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.profile button:hover {
+    transform: scale(1.1);
+}
+
+.profile-name-small {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .header-main {
@@ -112,6 +190,7 @@ h1 {
     display: grid;
     grid-template-columns: 5rem 1fr;
     gap: 1rem;
+    align-items: center;
 }
 
 #main-icon {
@@ -120,16 +199,31 @@ h1 {
 }
 
 .profile-main-container {
-    display: grid;
-    grid-template-rows: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
 }
 
 .greeting {
-    grid-row: 1;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.profile-name-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 .profile-name {
-    grid-row: 2;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.profile-username {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
 }
 
 .action-buttons {
@@ -137,6 +231,24 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: 2rem;
+}
+
+.action-buttons button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    border: 3px solid transparent;
+    background-color: var(--primary-color);
+    color: var(--color-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.action-buttons button:hover {
+    background-color: var(--color-light);
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
 }
 
 .profile-icon {
@@ -150,6 +262,7 @@ h1 {
     background-color: var(--secondary-color-light);
     padding: 1rem;
     gap: 1rem;
+    max-width: 100%;
 }
 
 .projects {
@@ -161,10 +274,11 @@ h1 {
 .projects-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: 1.2rem;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    align-items: stretch;
 }
 
 .project-card {
@@ -172,14 +286,66 @@ h1 {
     border-radius: 0.5rem;
     padding: 1rem;
     box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
 }
 
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5rem;
+    height: 100%;
+    background-color: var(--highlight-color);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.project-card p {
+    padding-left: 0.5rem;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 1rem 0 0 0;
+}
+
+.project-text {
+    color: gray;
+    flex-grow: 1;
+}
+
+.project-buttons {
+    position: relative;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.project-buttons button {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+}
+
+.project-buttons button:hover {
+    transform: rotate(360deg) scale(1.2);
+    background-color: var(--secondary-color-light);
+}
 
 .sidebar {
     grid-column: 2;
     display: grid;
     grid-template-rows: max-content;
     gap: 1rem;
+    max-width: 25vw;
 }
 
 .announcements {
@@ -193,6 +359,7 @@ h1 {
     grid-auto-rows: max-content;
     gap: 0.5rem;
     padding: 2rem;
+    box-shadow: var(--shadow);
 }
 
 .announcement-card {
@@ -210,6 +377,17 @@ h1 {
     background-color: var(--secondary-color-light);
 }
 
+.announcement-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.announcement-text {
+    color: gray;
+    font-size: 0.8rem;
+}
+
 .trending {
     grid-row: 2;
 }
@@ -222,4 +400,9 @@ h1 {
 
 .profile-container {
     align-content: center;
+    font-size: 0.8rem;
+}
+
+.project-name {
+    color: gray;
 }

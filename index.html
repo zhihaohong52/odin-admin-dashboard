@@ -6,71 +6,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="navbar">
-            <a href="#" class="nav-link logo">
-                <span class="material-symbols-outlined">dashboard</span>
-                <p class="logo-text">Dashboard</p>
+            <a href="#" class="nav-link" id="logo">
+                <span class="mdi mdi-view-dashboard"></span>
+                Dashboard
             </a>
             <div class="nav-links">
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">home</span>
+                            <span class="mdi mdi-home"></span>
                             Home
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">person</span>
+                            <span class="mdi mdi-card-account-details-outline"></span>
                             Profile
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">message</span>
+                            <span class="mdi mdi-message-reply"></span>
                             Messages
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">history</span>
+                            <span class="mdi mdi-clock-time-three"></span>
                             History
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">task</span>
+                            <span class="mdi mdi-note-multiple"></span>
                             Tasks
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">groups</span>
+                            <span class="mdi mdi-account-group"></span>
                             Commmunities
                         </a>
                     </li>
+                    <li class="nav-item"></li>
+                    </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">settings</span>
+                            <span class="mdi mdi-cog"></span>
                             Settings
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">help_center</span>
+                            <span class="mdi mdi-help-box"></span>
                             Support
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <span class="material-symbols-outlined">verified_user</span>
+                            <span class="mdi mdi-shield-check"></span>
                             Security
                         </a>
                     </li>
@@ -81,13 +82,13 @@
             <div class="main-header">
                 <div class="header-top">
                     <div class="search-bar">
-                        <span class="material-symbols-outlined">search</span>
+                        <span class="mdi mdi-magnify"></span>
                         <input type="text" class="search-input" placeholder="Search">
                     </div>
                     <div class="profile">
-                        <span class="material-symbols-outlined">notifications</span>
-                        <img class="profile-icon" src="images/cat.png" alt="Profile">
-                        <p class="profile-name">Morgan Oakley</p>
+                        <button><span class="mdi mdi-bell-ring-outline"></span></button>
+                        <button><img class="profile-icon" src="images/cat.png" alt="Profile"></button>
+                        <button><p class="profile-name-small">Morgan Oakley</p></button>
                     </div>
                 </div>
                 <div class="header-main">
@@ -97,9 +98,10 @@
                         </div>
                         <div class="profile-main-container">
                             <p class="greeting">Hi there,</p>
-                            <p class="profile-name">Morgan Oakley
-                            <span class="profile-username">(@morgan)</span>
-                            </p>
+                            <div class="profile-name-container">
+                                <p class="profile-name">Morgan Oakley</p>
+                                <span class="profile-username">(@morgan)</span>
+                            </div>
                         </div>
                     </div>
                     <div class="action-buttons">
@@ -114,22 +116,106 @@
                     <h1 class="projects-header">Your Projects</h1>
                     <ul class="projects-cards">
                         <li class="project-card">
-                            <p>1</p>
+                            <p class="project-title">Super Cool Project</p>
+                            <p class="project-text">
+                                Sed tempus ut lacus ut sculerisque. Suspendisse solliitudin nibh erat, id facilisis felis accumsan nec.
+                            </p>
+                            <div class="project-buttons">
+                                <button>
+                                    <span class="mdi mdi-star-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-eye-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-source-fork"></span>
+                                </button>
+                            </div>
                         </li>
                         <li class="project-card">
-                            <p>2</p>
+                            <p class="project-title">Less Cool Project</p>
+                            <p class="project-text">
+                                Nullam condimentum ipsum ut lectus vehicula consectetur. Quisque sed dolor tincidunt, consectetur sapien et, facilisis dolor. Duis sem purus, dignissim ut sapien in, varius pellentesque lacus.
+                            </p>
+                            <div class="project-buttons">
+                                <button>
+                                    <span class="mdi mdi-star-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-eye-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-source-fork"></span>
+                                </button>
+                            </div>
                         </li>
                         <li class="project-card">
-                            <p>3</p>
+                            <p class="project-title">Impossible App</p>
+                            <p class="project-text">
+                                In hac habitasse platea dictumst. Vivamus dictum rutrum arcu, a placerat velit sagittis id.
+                            </p>
+                            <div class="project-buttons">
+                                <button>
+                                    <span class="mdi mdi-star-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-eye-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-source-fork"></span>
+                                </button>
+                            </div>
                         </li>
                         <li class="project-card">
-                            <p>4</p>
+                            <p class="project-title">Easy Peasy App</p>
+                            <p class="project-text">
+                                Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan aliquam. Curabitur dignissim nisi in tortor commodo, ac bibendum magna tincidunt.
+                            </p>
+                            <div class="project-buttons">
+                                <button>
+                                    <span class="mdi mdi-star-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-eye-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-source-fork"></span>
+                                </button>
+                            </div>
                         </li>
                         <li class="project-card">
-                            <p>5</p>
+                            <p class="project-title">Ad Blocker</p>
+                            <p class="project-text">
+                                Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis. Aliquam sed malesuada eros.
+                            </p>
+                            <div class="project-buttons">
+                                <button>
+                                    <span class="mdi mdi-star-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-eye-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-source-fork"></span>
+                                </button>
+                            </div>
                         </li>
                         <li class="project-card">
-                            <p>6</p>
+                            <p class="project-title">Money Maker</p>
+                            <p class="project-text">
+                                Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex. Pellentesque mollis nec sem vel aliquam.
+                            </p>
+                            <div class="project-buttons">
+                                <button>
+                                    <span class="mdi mdi-star-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-eye-plus-outline"></span>
+                                </button>
+                                <button>
+                                    <span class="mdi mdi-source-fork"></span>
+                                </button>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -140,26 +226,19 @@
                             <li class="announcement-card">
                                 <p class="announcement-title">Site Maintenance</p>
                                 <p class="announcement-text">
-                                    Vestibulum condimentum tellus lacus,
-                                    in accumsan elit maximus ac. Donec
-                                    hendrerit sodales congue..
+                                    Vestibulum condimentum tellus lacus, in accumsan elit maximus ac. Donec hendrerit sodales congue..
                                 </p>
                             </li>
                             <li class="announcement-card">
                                 <p class="announcement-title">Community Share Day</p>
                                 <p class="announcement-text">
-                                    Nam vel lectus tincidunt, rutrum nulla
-                                    eu, ornane libero. Aliquam dictum
-                                    accumsan porttitor..
+                                    Nam vel lectus tincidunt, rutrum nulla eu, ornane libero. Aliquam dictum accumsan porttitor..
                                 </p>
                             </li>
                             <li class="announcement-card">
                                 <p class="announcement-title">Updated Privacy Policy</p>
                                 <p class="announcement-text">
-                                    Phasellus efficitur nisi eget elit
-                                    consectetur, eget condimentum ante
-                                    auctor. Cras fringilla sagittis sem in
-                                    mattis..
+                                    Phasellus efficitur nisi eget elit consectetur, eget condimentum ante auctor. Cras fringilla sagittis sem in mattis..
                                 </p>
                             </li>
                         </ul>
@@ -171,7 +250,7 @@
                                 <img src="images/bear.png" alt="profile" class="profile-icon">
                                 <div class="profile-container">
                                     <p class="username">@tegan</p>
-                                    <p class="project-name">World Piece Builder</p>
+                                    <p class="project-name">World Peace Builder</p>
                                 </div>
                             </li>
                             <li class="profile-card">
